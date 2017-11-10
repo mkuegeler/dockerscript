@@ -92,7 +92,8 @@ function run ($p) {
             $containerport = $json.containerport
 
             ## volumes are optional
-            if ($hostdir) {
+            if ($json.hostdir -and $json.containerdir) {
+                # echo "Host Dir!"
                 $hostdir = $json.hostdir
                 $containerdir = $json.containerdir
                 docker run -h $json.container --name $json.container -i -t -d -p  ${hostport}:${containerport} -v ${hostdir}:${containerdir} $json.image $json.command
@@ -100,6 +101,7 @@ function run ($p) {
             }
 
             else {
+                # echo "No host dir!"
                 docker run -h $json.container --name $json.container -i -t -d -p  ${hostport}:${containerport} $json.image $json.command    
             }
 
