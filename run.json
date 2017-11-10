@@ -1,0 +1,7 @@
+{
+    "container": "emberdevelopment",
+    "image": "mkuegeler/emberalpine:v1",
+    "hostport": 4200,
+    "containerport": 4200,    
+    "command": "/bin/bash"
+}

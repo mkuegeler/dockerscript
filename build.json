@@ -1,0 +1,4 @@
+{
+    "dockerfile": "Dockerfile.default",
+    "image": "mkuegeler/emberalpine:v1"
+}
